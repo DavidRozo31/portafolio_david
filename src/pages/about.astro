@@ -23,7 +23,7 @@ import "../styles/global.css";
       <p class="mb-4 text-lg text-primary font-medium">{SITE_CONTENT.hero.specialty}</p>
       <div class="flex justify-center gap-6 text-neutral">
         {
-          SITE_CONFIG.socialLinks.map((link) => (
+          SITE_CONFIG.socialLinks.map((link: { text: string; href: string }) => (
             <a href={link.href} target="_blank" class="hover:text-primary transition-colors">
               {link.text}
             </a>
@@ -58,7 +58,7 @@ import "../styles/global.css";
           <h3 class="mb-4 font-serif text-xl font-bold text-white">Stack Tecnológico</h3>
           <div class="flex flex-wrap gap-3">
             {
-              SITE_CONTENT.skills.map((skill) => (
+              SITE_CONTENT.skills.map((skill: string) => (
                 <span class="inline-block rounded-full bg-primary px-4 py-2 text-sm font-medium text-white">
                   {skill}
                 </span>
@@ -72,7 +72,7 @@ import "../styles/global.css";
           <h3 class="mb-4 font-serif text-xl font-bold text-white">Educación</h3>
           <div class="space-y-4">
             {
-              SITE_CONTENT.education.map((edu) => (
+              SITE_CONTENT.education.map((edu: any) => (
                 <div class="pb-4 border-b border-neutral/20 last:border-b-0">
                   <p class="font-medium text-white">{edu.degree}</p>
                   <p class="text-sm text-primary font-medium">{edu.school}</p>
@@ -90,7 +90,7 @@ import "../styles/global.css";
           <h3 class="mb-4 font-serif text-xl font-bold text-white">Idiomas</h3>
           <div class="space-y-3">
             {
-              SITE_CONTENT.languages.map((lang) => (
+              SITE_CONTENT.languages.map((lang: any) => (
                 <div>
                   <div class="flex justify-between mb-2">
                     <p class="text-sm font-medium text-white">{lang.name}</p>

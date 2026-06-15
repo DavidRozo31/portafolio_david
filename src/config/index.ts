@@ -1,3 +1,5 @@
+import type { SiteConfig, SiteContent } from "../types";
+
 export const SITE_CONFIG: SiteConfig = {
   title: "David Andrés Rodríguez Rozo - Estudiante de Ingeniería Mecatrónica",
   author: "David Andrés Rodríguez Rozo",
