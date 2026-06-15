@@ -63,24 +63,27 @@ export const SITE_CONTENT: SiteContent = {
         "Robot autónomo diseñado para plantacion de semillas y monitorear condiciones del suelo en tiempo real, utilizando sensores de humedad y temperatura, controlado por un microcontrolador ESP32.",
       linkPreview:
         "https://drive.google.com/file/d/1PcrWAWU-eXpfgAioCo8Ng0YORh4KCnQl/view",
-      linkSource: "#", // TODO: agrega el link al repositorio si lo tienes
-      images: ["/Robot_Semillas.jpeg"], // TODO: agrega una 2da imagen si tienes
+      linkSource: "#",
+      images: ["/Robot_Semillas.jpeg"],
+      technologies: ["Python", "C++", "Inventor"],
     },
     {
       name: "Embarcación de Paletas con Control Remoto por Radiofrecuencia",
       summary:
         "Embarcación de paletas diseñada para propulsión en agua, controlada remotamente mediante radiofrecuencia.",
-      linkPreview: "#", // TODO: link a video/demo si tienes
-      linkSource: "#", // TODO: link al repositorio si tienes
-      images: ["/Barco_Palas_Amigos.jpeg", "/Barco_Palas.jpeg"], // TODO: agrega tus 2 imágenes
+      linkPreview: "#",
+      linkSource: "#",
+      images: ["/Barco_Palas_Amigos.jpeg", "/Barco_Palas.jpeg"],
+      technologies: ["Inventor", "C++", "Python"],
     },
     {
       name: "Diseño y Construcción de un Viscosímetro",
       summary:
         "Diseño y construcción de un viscosímetro para medir la viscosidad de fluidos utilizando una stm32.",
-      linkPreview: "#", // TODO: link a video/demo si tienes
-      linkSource: "#", // TODO: link al repositorio si tienes
-      images: ["/Poster_Amigos_Viscocimetro.jpeg", "/Viscosimetro.jpeg"], // TODO: agrega tus 2 imágenes
+      linkPreview: "#",
+      linkSource: "#",
+      images: ["/Poster_Amigos_Viscocimetro.jpeg", "/Viscosimetro.jpeg"],
+      technologies: ["Inventor", "C++", "Python"],
     },
   ],
   about: {

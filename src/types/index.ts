@@ -39,6 +39,7 @@ export interface ProjectProps {
   // Lista de imágenes del proyecto. Si solo hay 1, se muestra a tamaño completo.
   // Si hay 2, se muestran lado a lado en una galería.
   images: string[];
+  technologies: string[];
   linkPreview?: string;
   linkSource?: string;
 }

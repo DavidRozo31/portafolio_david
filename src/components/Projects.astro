@@ -1,5 +1,4 @@
 ---
-import Section from "./Section.astro";
 import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 
@@ -10,56 +9,56 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<Section text="Proyectos Destacados" href="projects">
-  <div class="grid gap-8 md:gap-12">
-    {
-      projects.map(({ name, summary, images, linkPreview, linkSource }) => (
-        <div class="rounded-2xl border border-neutral/20 bg-black overflow-hidden">
-          <div class="bg-difu relative z-1 grid h-auto w-full grid-rows-2 rounded-2xl bg-[#f0f9ff] before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 sm:h-96">
-            <div class="flex h-full flex-col px-6 py-10">
-              <h3 class="mb-3 font-serif text-2xl leading-tight font-medium text-primary sm:text-3xl">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="mt-auto flex gap-5 pt-6 text-white">
-                {linkSource && (
-                  <a
-                    href={linkSource}
-                    target="_blank"
-                    class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                  >
-                    Código
-                  </a>
-                )}
-                {linkPreview && (
-                  <a
-                    href={linkPreview}
-                    target="_blank"
-                    class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                  >
-                    Más info
-                  </a>
-                )}
-              </div>
+<div class="grid gap-8 md:gap-10">
+  {
+    projects.map(({ name, summary, images, technologies, linkPreview, linkSource }) => (
+      <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
+        <!-- Image Section -->
+        <div class="relative h-64 md:h-72 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5">
+          <div class="absolute inset-0 flex items-center justify-center">
+            {images.length > 0 && (
+              <Image
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src={images[0]}
+                alt={name}
+                width="800"
+                height="400"
+              />
+            )}
+          </div>
+
+          {/* Secondary images indicator */}
+          {images.length > 1 && (
+            <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-white font-medium">
+              +{images.length - 1} imagen{images.length > 2 ? "s" : ""}
             </div>
-            <div
-              class={`grid h-full w-full gap-2 overflow-hidden p-2 ${
-                images.length > 1 ? "grid-cols-2" : "grid-cols-1"
-              }`}
-            >
-              {images.map((img) => (
-                <Image
-                  class="h-full w-full rounded-xl object-cover"
-                  src={img}
-                  alt={name}
-                  width="736"
-                  height="483"
-                />
-              ))}
-            </div>
+          )}
+        </div>
+
+        <!-- Content Section -->
+        <div class="p-8 md:p-10">
+          <h3 class="mb-3 font-serif text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">
+            {name}
+          </h3>
+
+          <p class="mb-6 text-neutral leading-relaxed">
+            {summary}
+          </p>
+
+          <!-- Technologies -->
+          <div class="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <span class="inline-block rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary border border-primary/50 hover:bg-primary/30 transition-colors">
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
-      ))
-    }
-  </div>
-</Section>
+
+        <!-- Decorative element -->
+        <div class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-primary via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+    ))
+  }
+</div>
+
