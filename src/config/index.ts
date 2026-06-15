@@ -1,5 +1,3 @@
-import type { SiteConfig, SiteContent } from "../types";
-
 export const SITE_CONFIG: SiteConfig = {
   title: "David Andrés Rodríguez Rozo - Estudiante de Ingeniería Mecatrónica",
   author: "David Andrés Rodríguez Rozo",
@@ -8,16 +6,16 @@ export const SITE_CONFIG: SiteConfig = {
   lang: "es",
   siteLogo: "/profile.jpeg", // TODO: reemplaza por tu foto de perfil
   navLinks: [
-    { text: "Experiencia", href: "#experience" },
-    { text: "Proyectos", href: "#projects" },
-    { text: "Sobre mí", href: "#about" },
+    { text: "Proyectos", href: "/projects" },
+    { text: "Sobre mí", href: "/about" },
+    { text: "Contacto", href: "/contact" },
   ],
   socialLinks: [
     {
       text: "LinkedIn",
       href: "https://www.linkedin.com/in/david-andres-rodr%C3%ADguez-rozo-7932ab2b0/",
     },
-    { text: "Github", href: "https://github.com/TU_USUARIO" }, // TODO: pon tu usuario de GitHub
+    { text: "Github", href: "https://github.com/DavidRozo31" }, // TODO: pon tu usuario de GitHub
     { text: "Email", href: "mailto:drozo1234@gmail.com" },
   ],
   socialImage: "/zen-og.png", // TODO: imagen para previsualizaciones al compartir el link
@@ -60,7 +58,7 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Robot de plantación y monitoreo agrícola",
       summary:
-        "Robot autónomo diseñado para plantar muchas semillas y monitorear condiciones del suelo en tiempo real, utilizando sensores de humedad y temperatura, controlado por un microcontrolador ESP32.",
+        "Robot autónomo diseñado para plantacion de semillas y monitorear condiciones del suelo en tiempo real, utilizando sensores de humedad y temperatura, controlado por un microcontrolador ESP32.",
       linkPreview:
         "https://drive.google.com/file/d/1PcrWAWU-eXpfgAioCo8Ng0YORh4KCnQl/view",
       linkSource: "#", // TODO: agrega el link al repositorio si lo tienes
@@ -69,7 +67,7 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Embarcación de Paletas con Control Remoto por Radiofrecuencia",
       summary:
-        "TODO: describe brevemente el proyecto (objetivo, principio de propulsión por paletas, módulo RF usado, microcontrolador, resultados obtenidos).",
+        "Embarcación de paletas diseñada para propulsión en agua, controlada remotamente mediante radiofrecuencia.",
       linkPreview: "#", // TODO: link a video/demo si tienes
       linkSource: "#", // TODO: link al repositorio si tienes
       images: ["/Barco_Palas_Amigos.jpeg", "/Barco_Palas.jpeg"], // TODO: agrega tus 2 imágenes
@@ -77,7 +75,7 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Diseño y Construcción de un Viscosímetro",
       summary:
-        "TODO: describe brevemente el proyecto (qué tipo de viscosímetro, principio de medición, instrumentación usada, resultados/calibración).",
+        "Diseño y construcción de un viscosímetro para medir la viscosidad de fluidos utilizando una stm32.",
       linkPreview: "#", // TODO: link a video/demo si tienes
       linkSource: "#", // TODO: link al repositorio si tienes
       images: ["/Poster_Amigos_Viscocimetro.jpeg", "/Viscosimetro.jpeg"], // TODO: agrega tus 2 imágenes
@@ -91,4 +89,48 @@ export const SITE_CONTENT: SiteContent = {
     `,
     image: "/about_me.jpeg", // TODO: reemplaza por tu foto
   },
+  skills: [
+    "Python",
+    "VHDL",
+    "LaTeX",
+    "C++",
+  ],
+  education: [
+    {
+      degree: "Bachiller",
+      school: "Colegio Bilingüe Divino Niño",
+      year: "2016 - 2020",
+      location: "Bucaramanga, Santander",
+    },
+    {
+      degree: "Ingeniería Mecatrónica",
+      school: "Universidad EIA",
+      year: "2021 - 2023",
+      location: "Medellín, Antioquia",
+      gpa: "4.0 / 5.0",
+    },
+    {
+      degree: "Ingeniería en Mecatrónica",
+      school: "Universidad Militar Nueva Granada",
+      year: "2023 - Presente",
+      location: "Cajicá, Cundinamarca",
+      gpa: "4.3 / 5.0",
+    },
+    {
+      degree: "Máster en IA & Data Science",
+      school: "Dev Senior",
+      year: "2025 - Presente",
+      location: "Cajicá",
+    },
+  ],
+  languages: [
+    {
+      name: "Español",
+      level: "Nativo",
+    },
+    {
+      name: "Inglés",
+      level: "B2",
+    },
+  ],
 };

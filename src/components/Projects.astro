@@ -11,15 +11,11 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Proyectos Destacados" href="projects">
-  {
-    projects.map(({ name, summary, images, linkPreview, linkSource }, index) => {
-      const top = 98 + index * 40;
-      return (
-        <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
-        >
-          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#f0f9ff] before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+  <div class="grid gap-8 md:gap-12">
+    {
+      projects.map(({ name, summary, images, linkPreview, linkSource }) => (
+        <div class="rounded-2xl border border-neutral/20 bg-black overflow-hidden">
+          <div class="bg-difu relative z-1 grid h-auto w-full grid-rows-2 rounded-2xl bg-[#f0f9ff] before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 sm:h-96">
             <div class="flex h-full flex-col px-6 py-10">
               <h3 class="mb-3 font-serif text-2xl leading-tight font-medium text-primary sm:text-3xl">
                 {name}
@@ -63,7 +59,7 @@ const { projects } = Astro.props;
             </div>
           </div>
         </div>
-      );
-    })
-  }
+      ))
+    }
+  </div>
 </Section>

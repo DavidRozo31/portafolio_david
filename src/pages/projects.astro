@@ -1,0 +1,16 @@
+---
+import { SITE_CONTENT } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Projects from "@components/Projects.astro";
+
+import "../styles/global.css";
+---
+
+<Layout>
+  <section class="py-16 md:py-24" id="projects">
+    <h1 class="mb-12 font-serif text-6xl md:text-7xl font-bold tracking-tightest text-white">
+      Proyectos
+    </h1>
+    <Projects projects={SITE_CONTENT.projects} />
+  </section>
+</Layout>

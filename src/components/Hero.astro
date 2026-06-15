@@ -1,27 +1,47 @@
 ---
 import type { HeroProps } from "@types";
+import { Image } from "astro:assets";
+import { SITE_CONFIG } from "@config";
+
 type Props = HeroProps;
 
 const { name, specialty, summary, email } = Astro.props;
 ---
 
 <section class="py-24 md:py-32" id="#hero">
-  <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
-  >
-    {name}
-  </h1>
-  <p
-    class="mb-9 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
-  >
-    {specialty}
-  </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
-    {summary}
-  </p>
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center">
+    <!-- Profile Image -->
+    <div class="md:col-span-2 flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-sky-400 rounded-3xl blur-2xl opacity-75"></div>
+        <img
+          src={SITE_CONFIG.siteLogo}
+          alt={name}
+          class="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl object-cover shadow-2xl"
+        />
+      </div>
+    </div>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
-  >
+    <!-- Content -->
+    <div class="md:col-span-3">
+      <h1
+        class="mb-2 font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tightest text-white"
+      >
+        {name}
+      </h1>
+      <p
+        class="mb-6 font-serif text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter text-primary"
+      >
+        {specialty}
+      </p>
+      <p class="mb-8 text-sm sm:text-base font-normal text-neutral md:text-lg leading-relaxed max-w-lg">
+        {summary}
+      </p>
+
+      <a
+        class="inline-block rounded-full bg-primary hover:bg-sky-600 transition-colors duration-200 px-8 py-4 text-sm leading-5 font-medium text-white shadow-lg hover:shadow-xl transform hover:scale-105"
+        href={`mailto:${email}`}>Get in Touch</a
+      >
+    </div>
+  </div>
 </section>
